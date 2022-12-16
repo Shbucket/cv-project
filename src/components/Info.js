@@ -42,10 +42,54 @@ class Info extends Component {
   render() {
     return (
       <form>
-        <label for='fName'>First name:</label>
-        <input type="text" id='fName' name='fName' value={this.state.first} onChange={this.firstChange}/>
-        <label for='lName'>Last name:</label>
-
+        <label for="fName">First name:</label>
+        <input
+          type="text"
+          id="fName"
+          name="fName"
+          value={this.state.first}
+          onChange={this.firstChange}
+        />
+        <label for="lName">Last name:</label>
+        <input
+          type="text"
+          id="lName"
+          name="lName"
+          value={this.state.last}
+          onChange={this.lastChange}
+        />
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          value={this.state.email}
+          onChange={this.emailChange}
+        />
+        <label for="phone">Phone:</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          value={this.state.phone}
+          onChange={this.phoneChange}
+        />
+        <label for="git">Git:</label>
+        <input
+          type="text"
+          id="git"
+          name="git"
+          value={this.state.git}
+          onChange={this.gitChange}
+        />
+        <label for="port">Portfoilo:</label>
+        <input
+          type="text"
+          id="port"
+          name="port"
+          value={this.state.port}
+          onChange={this.portChange}
+        />
       </form>
     );
   }
