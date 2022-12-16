@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Info from "./Info";
+import Education from "./education";
 
 class Main  extends Component {
     constructor(props){
@@ -7,9 +9,8 @@ class Main  extends Component {
 render() {
     return (
         <div>
-<form>
-    
-</form>
+            <Info />
+            <Education />
         </div>
     )
 }

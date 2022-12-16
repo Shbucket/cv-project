@@ -8,55 +8,41 @@ class Info extends Component {
       email: "",
       phone: "",
       git: "",
-      portfoilo: "",
+      port: "",
     };
 
-    this.firstChange = this.firstChange.bind(this)
-    this.lastChange = this.lastChange.bind(this)
-    this.emailChange = this.emailChange.bind(this)
-    this.phoneChange = this.phoneChange.bind(this)
-    this.gitChange = this.gitChange.bind(this)
-    this.portChange = this.portChange.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value
+    const name = target.name;
 
-
-  firstChange(event) {
-    this.setState({ first: event.target.value });
-  }
-  lastChange(event) {
-    this.setState({last: event.target.value});
-  }
-  emailChange(event) {
-    this.setState({last: event.target.value});
-  }
-  phoneChange(event) {
-    this.setState({phone: event.target.value});
-  }
-  gitChange(event) {
-    this.setState({git: event.target.value});
-  }
-  portChange(event) {
-    this.setState({portfoilo: event.target.value});
+    this.setState({
+      [name]: value,
+    });
   }
 
   render() {
     return (
+        <div>
+            <h1>Personal Info</h1>
       <form>
         <label for="fName">First name:</label>
         <input
           type="text"
           id="fName"
-          name="fName"
+          name="first"
           value={this.state.first}
-          onChange={this.firstChange}
+          onChange={this.handleInputChange}
         />
         <label for="lName">Last name:</label>
         <input
           type="text"
           id="lName"
-          name="lName"
+          name="last"
           value={this.state.last}
-          onChange={this.lastChange}
+          onChange={this.handleInputChange}
         />
         <label for="email">Email:</label>
         <input
@@ -64,7 +50,7 @@ class Info extends Component {
           id="email"
           name="email"
           value={this.state.email}
-          onChange={this.emailChange}
+          onChange={this.handleInputChange}
         />
         <label for="phone">Phone:</label>
         <input
@@ -72,7 +58,7 @@ class Info extends Component {
           id="phone"
           name="phone"
           value={this.state.phone}
-          onChange={this.phoneChange}
+          onChange={this.handleInputChange}
         />
         <label for="git">Git:</label>
         <input
@@ -80,7 +66,7 @@ class Info extends Component {
           id="git"
           name="git"
           value={this.state.git}
-          onChange={this.gitChange}
+          onChange={this.handleInputChange}
         />
         <label for="port">Portfoilo:</label>
         <input
@@ -88,11 +74,12 @@ class Info extends Component {
           id="port"
           name="port"
           value={this.state.port}
-          onChange={this.portChange}
+          onChange={this.handleInputChange}
         />
       </form>
+      </div>
     );
   }
 }
 
-export default Info 
+export default Info;
